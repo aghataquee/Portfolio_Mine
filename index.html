@@ -175,7 +175,7 @@ footer{border-top:1px solid var(--line);padding:38px 0;color:var(--mu);font-size
 
 <script>
 /* ===== EDIT ME: contact + links ===== */
-const CFG={email:"your@email.com",linkedin:"https://www.linkedin.com/in/your-profile",github:"https://github.com/your-username",whatsapp:"https://wa.me/910000000000",resume:"resume.pdf"};
+const CFG={email:"your@email.com",linkedin:"https://www.linkedin.com/in/taquee-agha-2420a4262/",github:"https://github.com/aghataquee",whatsapp:"https://wa.me/918533028219",resume:"Resume_Taquee.pdf"};
 
 /* ===== EDIT ME: projects. url = existing live link; tech = only verified technologies; filters = WordPress | HTML, CSS & JavaScript | React | Business Websites | E-commerce; img = optional thumbnail path ===== */
 const P=(name,cat,desc,hl,o={})=>({name,cat,desc,hl,url:"#",gh:"",tech:[],filters:["Business Websites"],img:"",...o});
@@ -194,6 +194,24 @@ P("Nutrishness Baby Food","Food & E-commerce","Developed a visually engaging web
 P("Evergreen EduLife","Education","Created a professional digital platform for an education-focused brand, emphasizing accessible information, organized content, and an approachable user experience.",["Education-focused design","Structured content","Responsive layouts","Easy navigation"]),
 P("Vishranti Badrinath","Hospitality & Travel","Developed a website for a hospitality destination, focusing on presenting its offerings, creating an inviting digital experience, and helping visitors explore relevant information.",["Destination-focused presentation","Visual storytelling","Responsive design","User-friendly content structure"])
 ];
+
+/* ===== EDIT ME: live website links (project name -> URL). Projects without a link hide the button. ===== */
+const LINKS={
+  "Stratops Logistics":"https://stratops.co.in/",
+  "Intrend Furniture":"https://intrendfurniture.com/",
+  "Huda Dental Care":"https://www.hudadentalcare.com/",
+  "Refyn Teeth Whitening":"https://refynteethwhitening.in/",
+  "AOTPL":"",
+  "Aims Events":"https://aimsevents.com/",
+  "Pinakin Events":"https://pinakinevents.com/",
+  "Real Estatez":"",
+  "Ascom Energy":"https://ascomenergy.com/",
+  "BrandXpressions":"https://brandxpressions.in/",
+  "Nutrishness Baby Food":"https://nutrishness.in/",
+  "Evergreen EduLife":"https://evergreenedulife.in/",
+  "Vishranti Badrinath":"https://www.vishranti.in/"
+};
+PROJECTS.forEach(p=>{if(LINKS[p.name])p.url=LINKS[p.name]});
 
 const HL=[["💡","Creative Problem Solver","Turning complex requirements into clear, working solutions."],["⚡","Performance-Focused Developer","Fast, lightweight, search-friendly builds."],["📚","Continuous Learner","Always improving my craft and tooling."]];
 const SK=[["‹/›","Frontend Development",["HTML5","CSS3","JavaScript (ES6+)","React.js","Responsive Web Design","UI/UX Implementation"]],["⚙","Backend Development",["Node.js","Express.js","MongoDB","REST APIs","SQL","Authentication & Authorization"]],["W","WordPress Development",["Custom WordPress Websites","Elementor","WPBakery","WooCommerce","Theme Customization","Plugin Integration","Website Maintenance","WordPress Performance Optimization"]],["🔍","SEO & Digital Optimization",["On-Page SEO","Technical SEO","Keyword Research","Meta Title & Description Optimization","Image Optimization","Website Speed Optimization","Mobile-Friendly Optimization","Google Search Console","Google Analytics","Local SEO","Google Business Profile Optimization"]],["🛠","Tools & Platforms",["Git & GitHub","VS Code","Figma","Postman","Vercel","WordPress"]]];
@@ -216,7 +234,7 @@ function render(f){
   return `<article class="glass proj rv in"><div class="th" style="background:linear-gradient(135deg,hsl(${h} 70% 38%),hsl(${(h+60)%360} 70% 22%))"><span class="badge">${esc(p.cat)}</span>${p.img?`<img src="${esc(p.img)}" alt="${esc(p.name)} website preview" loading="lazy" width="600" height="380">`:`<b aria-hidden="true">${esc(p.name.split(" ").map(w=>w[0]).slice(0,2).join(""))}</b>`}</div>
   <div class="pb"><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p>${p.tech.length?`<div class="tags" style="margin:0">${p.tech.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div>`:""}
   <ul>${p.hl.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
-  <div class="acts"><a class="btn p" href="${esc(p.url)}" target="_blank" rel="noopener">Live Website ↗</a>${p.gh?`<a class="btn" href="${esc(p.gh)}" target="_blank" rel="noopener">GitHub</a>`:""}</div></div></article>`}).join(""):`<p class="empty">No projects tagged “${esc(f)}” yet. Add this filter to a project's <code>filters</code> array.</p>`;
+  <div class="acts">${p.url&&p.url!=="#"?`<a class="btn p" href="${esc(p.url)}" target="_blank" rel="noopener">Live Website ↗</a>`:""}${p.gh?`<a class="btn" href="${esc(p.gh)}" target="_blank" rel="noopener">GitHub</a>`:""}</div></div></article>`}).join(""):`<p class="empty">No projects tagged “${esc(f)}” yet. Add this filter to a project's <code>filters</code> array.</p>`;
 }
 $("#fl").innerHTML=FILTERS.map((f,i)=>`<button class="f" aria-pressed="${i==0}">${f}</button>`).join("");
 $("#fl").addEventListener("click",e=>{const b=e.target.closest(".f");if(!b)return;document.querySelectorAll(".f").forEach(x=>x.setAttribute("aria-pressed",x===b));render(b.textContent)});
