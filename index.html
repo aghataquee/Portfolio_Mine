@@ -1,133 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Taquee Agha | Portfolio</title>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Taquee Agha | Web Developer, WordPress Developer & SEO Specialist</title>
+<meta name="description" content="Taquee Agha is a Web Developer, WordPress specialist and SEO expert building responsive, performance-focused websites that drive business growth.">
+<meta property="og:title" content="Taquee Agha | Web Developer, WordPress & SEO">
+<meta property="og:description" content="Modern responsive websites, custom WordPress solutions and SEO.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0b0d17">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%237c5cff'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3ETA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
 <style>
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 0;
-        background: #f5f5f5;
-        color: #333;
-    }
-
-    header {
-        text-align: center;
-        padding: 60px 20px;
-        background: #101820;
-        color: white;
-    }
-
-    header h1 {
-        font-size: 40px;
-        margin: 0;
-    }
-
-    header p {
-        font-size: 18px;
-        opacity: 0.8;
-    }
-
-    .social-links {
-        margin-top: 15px;
-    }
-
-    .social-links a {
-        text-decoration: none;
-        margin: 10px;
-        display: inline-block;
-        padding: 10px 20px;
-        border-radius: 6px;
-        border: 2px solid white;
-        color: white;
-        transition: 0.3s;
-    }
-
-    .social-links a:hover {
-        background: white;
-        color: #101820;
-    }
-
-    .projects {
-        padding: 50px 25px;
-        max-width: 800px;
-        margin: auto;
-    }
-
-    .projects h2 {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    .project-list {
-        list-style: none;
-        padding: 0;
-    }
-
-    .project-list li {
-        background: white;
-        padding: 15px 20px;
-        border-radius: 10px;
-        margin-bottom: 12px;
-        font-size: 18px;
-        transition: 0.3s;
-        cursor: pointer;
-    }
-
-    .project-list li:hover {
-        background: #101820;
-        color: white;
-        transform: scale(1.03);
-    }
-
-    footer {
-        text-align: center;
-        padding: 15px;
-        margin-top: 30px;
-        background: #101820;
-        color: white;
-        font-size: 14px;
-    }
+:root{--bg:#0b0d17;--bg2:#11142a;--card:rgba(255,255,255,.04);--line:rgba(255,255,255,.09);--tx:#e9ecf8;--mu:#9aa3c4;--a:#22d3ee;--b:#7c5cff;--g:linear-gradient(120deg,#22d3ee,#7c5cff 60%,#c084fc);--r:18px;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.65 Inter,system-ui,-apple-system,Segoe UI,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Space Grotesk',Inter,system-ui,sans-serif;line-height:1.1;margin:0;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+section{padding:96px 0;position:relative}
+.grad{background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{font:600 12px/1 'Space Grotesk',sans-serif;letter-spacing:.18em;color:var(--a);text-transform:uppercase;margin-bottom:16px;display:block}
+h2{font-size:clamp(2rem,4.5vw,3rem);margin-bottom:14px}
+.sub{color:var(--mu);max-width:640px;margin:0 0 44px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;font-weight:600;border:1px solid var(--line);cursor:pointer;font-size:15px;transition:.25s;color:var(--tx);background:transparent;font-family:inherit}
+.btn.p{background:var(--g);border:0;color:#080a14}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px -10px var(--b)}
+:focus-visible{outline:2px solid var(--a);outline-offset:3px}
+.glass{background:var(--card);border:1px solid var(--line);border-radius:var(--r);backdrop-filter:blur(10px)}
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);background:rgba(11,13,23,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font:700 20px 'Space Grotesk',sans-serif}
+.links{display:flex;gap:26px;align-items:center;font-size:14px;color:var(--mu)}
+.links a:hover{color:var(--tx)}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--tx);border-radius:10px;padding:8px 12px;font-size:18px}
+/* hero */
+#top{padding-top:150px;min-height:100vh}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.35;z-index:-1;animation:fl 14s ease-in-out infinite}
+.o1{width:420px;height:420px;background:var(--b);top:40px;left:-120px}.o2{width:360px;height:360px;background:var(--a);top:260px;right:-100px;animation-delay:-6s}
+@keyframes fl{50%{transform:translate(30px,40px)}}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+h1{font-size:clamp(2.4rem,5.6vw,4.2rem);margin-bottom:22px}
+.hero p{color:var(--mu);max-width:560px}
+.cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:30px 0 26px}
+.dl{color:var(--a);border-bottom:1px solid currentColor;font-weight:500}
+.avail{display:inline-flex;gap:10px;align-items:center;font-size:13px;color:var(--mu);padding:8px 14px}
+.dot{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 0 0 #34d399;animation:pu 2s infinite}
+@keyframes pu{70%{box-shadow:0 0 0 9px transparent}}
+.code{padding:20px;font:13px/1.8 ui-monospace,Menlo,Consolas,monospace;position:relative;overflow:hidden}
+.code i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;background:#ff5f57}.code i:nth-child(2){background:#febc2e}.code i:nth-child(3){background:#28c840}
+.code pre{margin:14px 0 0;white-space:pre-wrap;color:#c9d1f5}.k{color:#c084fc}.s{color:#22d3ee}.c{color:#6b7398}
+.chip{position:absolute;padding:8px 14px;border-radius:999px;font-size:12px;font-weight:600;background:rgba(17,20,42,.9);border:1px solid var(--line);animation:fl 8s ease-in-out infinite}
+.hv{position:relative;padding:30px 0}
+/* cards */
+.grid{display:grid;gap:20px}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
+.card{padding:26px;transition:.3s}.card:hover{transform:translateY(-6px);border-color:rgba(124,92,255,.5);background:rgba(124,92,255,.07)}
+.card h3{font-size:1.15rem;margin-bottom:10px}.card p{color:var(--mu);margin:0;font-size:15px}
+.ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--g);color:#080a14;font-weight:700;margin-bottom:16px}
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:44px}.about p{color:var(--mu);margin:0 0 16px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tag{font-size:12.5px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);color:var(--mu);background:rgba(255,255,255,.03);transition:.2s}
+.tag:hover{color:var(--a);border-color:var(--a)}
+/* projects */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+.f{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--mu);cursor:pointer;font:500 14px Inter,sans-serif}
+.f[aria-pressed=true]{background:var(--g);color:#080a14;border-color:transparent}
+.proj{overflow:hidden;display:flex;flex-direction:column;transition:.3s}.proj:hover{transform:translateY(-6px);border-color:rgba(34,211,238,.5)}
+.th{height:190px;position:relative;display:grid;place-items:center;overflow:hidden}
+.th img{width:100%;height:100%;object-fit:cover}
+.th b{font:700 3.2rem 'Space Grotesk',sans-serif;color:rgba(255,255,255,.9);z-index:1}
+.th::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.25),transparent 55%);transition:.4s}
+.proj:hover .th::after{transform:scale(1.3)}
+.badge{position:absolute;top:14px;left:14px;z-index:2;font-size:11.5px;font-weight:600;padding:5px 11px;border-radius:999px;background:rgba(8,10,20,.7);border:1px solid var(--line)}
+.pb{padding:22px;display:flex;flex-direction:column;gap:12px;flex:1}.pb h3{font-size:1.25rem}.pb p{margin:0;color:var(--mu);font-size:14.5px}
+.pb ul{margin:0;padding-left:18px;color:var(--mu);font-size:13.5px}.pb li::marker{color:var(--a)}
+.acts{display:flex;gap:10px;margin-top:auto;padding-top:6px}.acts .btn{padding:10px 18px;font-size:13.5px}
+.empty{color:var(--mu);grid-column:1/-1;text-align:center;padding:40px}
+/* process */
+.steps{counter-reset:s;position:relative}
+.step{padding:26px;position:relative}.step .n{font:700 2.6rem 'Space Grotesk',sans-serif;display:block;margin-bottom:10px}
+.why li{list-style:none;padding:16px 18px 16px 48px;position:relative;color:var(--mu)}
+.why li::before{content:"✓";position:absolute;left:16px;top:14px;color:#080a14;background:var(--g);width:22px;height:22px;border-radius:50%;text-align:center;font-size:13px;line-height:22px;font-weight:700}
+.why{padding:0;margin:0}
+/* contact */
+#contact .box{padding:clamp(28px,5vw,60px);background:radial-gradient(circle at 0 0,rgba(124,92,255,.25),transparent 55%),radial-gradient(circle at 100% 100%,rgba(34,211,238,.18),transparent 50%),var(--bg2);border:1px solid var(--line);border-radius:28px;display:grid;grid-template-columns:1fr 1.1fr;gap:44px}
+form{display:grid;gap:14px}
+input,textarea{width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--tx);font:inherit}
+input:focus,textarea:focus{outline:2px solid var(--a);border-color:transparent}
+label{font-size:13px;color:var(--mu);display:grid;gap:6px}
+.cl{display:grid;gap:10px;margin-top:22px}.cl a{padding:13px 16px;border:1px solid var(--line);border-radius:12px;display:flex;justify-content:space-between;transition:.2s;background:rgba(255,255,255,.03)}.cl a:hover{border-color:var(--a);color:var(--a)}
+footer{border-top:1px solid var(--line);padding:38px 0;color:var(--mu);font-size:14px}
+.fr{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px}.fr nav{gap:18px;height:auto;display:flex;flex-wrap:wrap}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media(max-width:900px){.hero,.about,#contact .box{grid-template-columns:1fr}.g3,.g4{grid-template-columns:repeat(2,1fr)}.hv{display:none}
+.burger{display:block}.links{position:absolute;top:100%;left:0;right:0;background:var(--bg2);flex-direction:column;padding:20px;gap:18px;display:none;border-bottom:1px solid var(--line)}.links.open{display:flex}}
+@media(max-width:600px){section{padding:70px 0}.g2,.g3,.g4{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
+<header><div class="wrap"><nav aria-label="Main">
+<a class="logo" href="#top">Taquee<span class="grad">.</span>dev</a>
+<button class="burger" id="bg" aria-label="Toggle menu" aria-expanded="false">☰</button>
+<div class="links" id="lk"><a href="#about">About</a><a href="#skills">Skills</a><a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a class="btn p" style="padding:9px 20px" href="#contact">Hire Me</a></div>
+</nav></div></header>
 
-<header>
-    <h1>Taquee Agha</h1>
-    <p> 1.5 yrs of Experience | MERN Stack Developer | Frontend & Backend Developer | UI/UX Enthusiast |Wordpress Website Developer | B.Tech </p>
+<main>
+<section id="top"><div class="orb o1"></div><div class="orb o2"></div>
+<div class="wrap hero">
+<div>
+<span class="eyebrow">Web Developer | WordPress Specialist | SEO</span>
+<h1>Building <span class="grad">Digital Experiences</span> That Drive Real <span class="grad">Business Growth.</span></h1>
+<p>I'm Taquee Agha, a passionate Web Developer specializing in modern, responsive websites, custom WordPress solutions, and search engine optimization. I combine clean code, creative design, and performance-focused development to help businesses establish a powerful online presence.</p>
+<div class="cta"><a class="btn p" href="#work">Explore My Work →</a><a class="btn" href="#contact">Let's Work Together</a><a class="dl" href="RESUME_URL" download>Download Resume</a></div>
+<div class="avail glass"><span class="dot"></span>Available for Freelance &amp; Full-Time Opportunities</div>
+</div>
+<div class="hv" aria-hidden="true">
+<div class="glass code"><i></i><i></i><i></i>
+<pre><span class="c">// taquee.config.js</span>
+<span class="k">const</span> developer = {
+  name: <span class="s">"Taquee Agha"</span>,
+  stack: [<span class="s">"React"</span>, <span class="s">"Node"</span>, <span class="s">"MongoDB"</span>],
+  cms: <span class="s">"WordPress"</span>,
+  seo: <span class="k">true</span>,
+  experience: <span class="s">"1.5+ years"</span>
+};</pre></div>
+<span class="chip" style="top:-2px;right:10px">⚛ React.js</span><span class="chip" style="bottom:70px;left:-24px;animation-delay:-3s">WordPress</span><span class="chip" style="bottom:0;right:30px;animation-delay:-5s">🔍 SEO</span>
+</div></div></section>
 
-    <div class="social-links">
-        <a href="https://github.com/aghataquee?tab=repositories" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/taquee-agha-2420a4262/" target="_blank">LinkedIn</a>
-    </div>
-</header>
+<section id="about"><div class="wrap">
+<div class="about rv"><div>
+<span class="eyebrow">About</span><h2>More Than Just a <span class="grad">Developer</span></h2>
+<p>I'm a Web Developer with 1.5+ years of practical experience building responsive websites, dynamic web applications, and business-focused digital solutions.</p>
+<p>My expertise spans frontend development, backend technologies, WordPress development, and SEO. I enjoy transforming ideas into functional, visually appealing, and user-friendly experiences.</p>
+<p>From writing clean HTML, CSS, and JavaScript to developing customized WordPress websites and optimizing them for search engines, I focus on creating solutions that combine design, performance, and usability.</p>
+<p>My goal is simple: build digital products that not only look impressive but also deliver meaningful results.</p></div>
+<div class="grid" id="hl"></div></div></div></section>
 
-<section class="projects">
-    <h2>My Projects</h2>
+<section id="skills"><div class="wrap">
+<span class="eyebrow">Toolkit</span><h2>Technical <span class="grad">Skills</span></h2><p class="sub">The technologies and disciplines I use to design, build and optimize for the web.</p>
+<div class="grid g3" id="sk"></div></div></section>
 
-    <ul class="project-list">
-        <li onclick="window.open('https://stratops.co.in/', '_blank')">🔗 Stratops Logistics Company</li>
-        <li onclick="window.open('https://intrendfurniture.com/home/', '_blank')">🔗 Intrend Furniture</li>
-         <li onclick="window.open('https://hudadentalcare.com/', '_blank')">🔗 Huda Dental Care</li>
-        <li onclick="window.open('https://refynteethwhitening.in/', '_blank')">🔗 Refyn Teeth Whitening</li>
-        <li onclick="window.open('https://aotpl.co.in/', '_blank')">🔗 AOTPL Website</li>
-        <li onclick="window.open('https://aimsevents.com/', '_blank')">🔗 Aims Events</li>
-        <li onclick="window.open('https://pinakinevents.com/', '_blank')">🔗 Pinakin Events</li>
-        <li onclick="window.open('https://realestatez.in/', '_blank')">🔗 Real Estatez Platform</li>
-        <li onclick="window.open('https://ascomenergy.com/', '_blank')">🔗 Ascom Energy</li>
-        <li onclick="window.open('https://brandxpressions.in/', '_blank')">🔗 BrandXpressions</li>
-        <li onclick="window.open('https://nutrishness.in/', '_blank')">🔗 Nutrishness Baby Food</li>
-        <li onclick="window.open('https://evergreenedulife.in/', '_blank')">🔗Evergreen EduLife </li>
-        <li onclick="window.open('https://vishrantibadrinath.com/', '_blank')">🔗Vishranti Badrinath </li>
-       
-    </ul>
-</section>
+<section id="work"><div class="wrap">
+<span class="eyebrow">Portfolio</span><h2>Selected Work &amp; <span class="grad">Digital Experiences</span></h2>
+<p class="sub">A collection of websites and applications I've designed, developed, and optimized for different industries.</p>
+<div class="filters" id="fl" role="group" aria-label="Filter projects"></div>
+<div class="grid g3" id="pj"></div></div></section>
 
-<footer>
-    © 2025 - Designed & Developed by Taquee Agha
-</footer>
+<section id="services"><div class="wrap">
+<span class="eyebrow">Services</span><h2>How I Can Help <span class="grad">Your Business</span></h2><p class="sub"></p>
+<div class="grid g2" id="sv"></div></div></section>
 
+<section id="process"><div class="wrap">
+<span class="eyebrow">Process</span><h2>My Development <span class="grad">Process</span></h2><p class="sub"></p>
+<div class="grid g4 steps" id="st"></div></div></section>
+
+<section id="why"><div class="wrap">
+<span class="eyebrow">Why me</span><h2>Focused on Quality. <span class="grad">Driven by Results.</span></h2><p class="sub"></p>
+<ul class="grid g2 why" id="wy"></ul></div></section>
+
+<section id="contact"><div class="wrap"><div class="box rv">
+<div><span class="eyebrow">Contact</span><h2>Have a Project in Mind? <span class="grad">Let's Build Something Great.</span></h2>
+<p style="color:var(--mu)">Whether you're looking to build a new website, improve your existing digital presence, or collaborate on an exciting project, I'd love to hear from you.</p>
+<div class="cl"><a id="c-mail" href="#">Email <span>→</span></a><a id="c-in" href="#" target="_blank" rel="noopener">LinkedIn <span>↗</span></a><a id="c-gh" href="#" target="_blank" rel="noopener">GitHub <span>↗</span></a><a id="c-wa" href="#" target="_blank" rel="noopener">WhatsApp <span>↗</span></a><a href="RESUME_URL" download>Download Resume <span>↓</span></a></div></div>
+<form id="cf"><label>Name<input name="n" required autocomplete="name"></label><label>Email<input name="e" type="email" required autocomplete="email"></label><label>Subject<input name="s" required></label><label>Message<textarea name="m" rows="5" required></textarea></label><button class="btn p" type="submit">Send Message</button><small id="fs" style="color:var(--mu)" role="status"></small></form>
+</div></div></section>
+</main>
+
+<footer><div class="wrap fr"><div>© <span id="yr"></span> Taquee Agha. Designed &amp; Developed with Passion by Taquee Agha</div>
+<nav aria-label="Footer"><a href="#about">About</a><a href="#work">Work</a><a href="#services">Services</a><a href="#contact">Contact</a><a class="ln-in" href="#" target="_blank" rel="noopener">LinkedIn</a><a class="ln-gh" href="#" target="_blank" rel="noopener">GitHub</a></nav></div></footer>
+
+<script>
+/* ===== EDIT ME: contact + links ===== */
+const CFG={email:"your@email.com",linkedin:"https://www.linkedin.com/in/your-profile",github:"https://github.com/your-username",whatsapp:"https://wa.me/910000000000",resume:"resume.pdf"};
+
+/* ===== EDIT ME: projects. url = existing live link; tech = only verified technologies; filters = WordPress | HTML, CSS & JavaScript | React | Business Websites | E-commerce; img = optional thumbnail path ===== */
+const P=(name,cat,desc,hl,o={})=>({name,cat,desc,hl,url:"#",gh:"",tech:[],filters:["Business Websites"],img:"",...o});
+const PROJECTS=[
+P("Stratops Logistics","Corporate Website","Developed a professional corporate website for a logistics business, focusing on a structured content layout, responsive design, and a seamless user experience. The website communicates business services effectively while establishing a strong digital presence.",["Responsive corporate layout","Clear service presentation","User-friendly navigation","Professional business branding"]),
+P("Intrend Furniture","Furniture & E-commerce","Created a modern digital experience for a furniture brand, emphasizing elegant product presentation, intuitive navigation, and a responsive interface that helps customers explore furniture collections.",["Product-focused design","Responsive layouts","Modern visual presentation","Improved browsing experience"],{filters:["E-commerce","Business Websites"]}),
+P("Huda Dental Care","Healthcare Website","Developed a professional dental clinic website designed to strengthen the clinic's online presence, showcase dental services, and make it easier for potential patients to discover information and contact the clinic.",["Healthcare-focused UI","Service presentation","Mobile-responsive design","Contact and appointment inquiry flow","Local SEO considerations"]),
+P("Refyn Teeth Whitening","Healthcare & Beauty","Built a modern web presence for a teeth-whitening brand, focusing on clean aesthetics, service visibility, and a user-friendly experience that supports brand credibility and customer engagement.",["Modern brand presentation","Responsive design","Service-focused content","SEO-friendly page structure"]),
+P("AOTPL","Corporate Website","Developed a professional corporate website that presents the company's services and business identity through a clean, structured interface. The implementation prioritizes usability, responsive behavior, and a consistent visual experience.",["Corporate branding","Responsive implementation","Structured content","User-friendly navigation"]),
+P("Aims Events","Events & Entertainment","Created an engaging digital platform for an events company, showcasing its services and event experiences through visually appealing layouts and accessible content.",["Visual storytelling","Event-focused sections","Responsive design","Clear service presentation"]),
+P("Pinakin Events","Event Management","Designed and developed a professional website for an event management brand, focusing on elegant presentation, service discovery, and an engaging browsing experience.",["Brand-focused design","Service showcase","Responsive layouts","Visual content presentation"]),
+P("Real Estatez","Real Estate","Developed a real estate platform focused on presenting property-related information through an organized interface, helping users navigate listings and explore available opportunities.",["Property-focused layout","Structured content presentation","Responsive interface","User-friendly navigation"]),
+P("Ascom Energy","Renewable Energy","Built a corporate web presence for a renewable energy company, emphasizing professional branding, service communication, and a clean presentation of solar energy solutions.",["Corporate website development","Energy-sector branding","Service-focused content","Responsive design"]),
+P("BrandXpressions","Branding & Creative Services","Developed a modern website for a creative brand, focusing on visual identity, service presentation, and an engaging user experience that communicates the brand's value.",["Creative visual direction","Brand-focused sections","Responsive design","Clear content hierarchy"]),
+P("Nutrishness Baby Food","Food & E-commerce","Developed a visually engaging website for a baby food brand, combining a warm and welcoming design with clear product presentation and a user-friendly shopping experience.",["Product-focused presentation","E-commerce integration","Responsive design","Brand-consistent colors","Customer-friendly navigation"],{filters:["E-commerce","Business Websites"]}),
+P("Evergreen EduLife","Education","Created a professional digital platform for an education-focused brand, emphasizing accessible information, organized content, and an approachable user experience.",["Education-focused design","Structured content","Responsive layouts","Easy navigation"]),
+P("Vishranti Badrinath","Hospitality & Travel","Developed a website for a hospitality destination, focusing on presenting its offerings, creating an inviting digital experience, and helping visitors explore relevant information.",["Destination-focused presentation","Visual storytelling","Responsive design","User-friendly content structure"])
+];
+
+const HL=[["💡","Creative Problem Solver","Turning complex requirements into clear, working solutions."],["⚡","Performance-Focused Developer","Fast, lightweight, search-friendly builds."],["📚","Continuous Learner","Always improving my craft and tooling."]];
+const SK=[["‹/›","Frontend Development",["HTML5","CSS3","JavaScript (ES6+)","React.js","Responsive Web Design","UI/UX Implementation"]],["⚙","Backend Development",["Node.js","Express.js","MongoDB","REST APIs","SQL","Authentication & Authorization"]],["W","WordPress Development",["Custom WordPress Websites","Elementor","WPBakery","WooCommerce","Theme Customization","Plugin Integration","Website Maintenance","WordPress Performance Optimization"]],["🔍","SEO & Digital Optimization",["On-Page SEO","Technical SEO","Keyword Research","Meta Title & Description Optimization","Image Optimization","Website Speed Optimization","Mobile-Friendly Optimization","Google Search Console","Google Analytics","Local SEO","Google Business Profile Optimization"]],["🛠","Tools & Platforms",["Git & GitHub","VS Code","Figma","Postman","Vercel","WordPress"]]];
+const SV=[["Custom Website Development","Modern, responsive, and high-performance websites built using HTML, CSS, JavaScript, and modern development practices. I focus on clean code, intuitive navigation, and experiences that work seamlessly across devices."],["WordPress Development","Professional WordPress websites tailored to your business requirements, including custom layouts, theme customization, Elementor development, WooCommerce integration, and ongoing website maintenance."],["SEO & Website Optimization","Improve your website's visibility and technical foundation through on-page SEO, keyword optimization, metadata, mobile responsiveness, performance improvements, and search-friendly website structures."],["Website Redesign & Maintenance","Transform outdated websites into modern digital experiences with improved visual design, better usability, responsive layouts, and ongoing technical support."]];
+const ST=[["Discover","Understanding business goals, audience, project requirements, and desired outcomes."],["Design","Planning the website structure, user journey, and visual direction."],["Develop","Building responsive, accessible, and functional websites using suitable technologies."],["Optimize & Launch","Testing responsiveness, improving performance, implementing SEO fundamentals, and preparing the website for launch."]];
+const WY=["Practical experience across different industries.","Strong foundation in frontend and backend technologies.","Expertise in WordPress development.","Understanding of SEO and digital visibility.","Responsive-first development approach.","Clear communication and collaborative workflow.","Commitment to clean, maintainable code.","Continuous learning and improvement."];
+const FILTERS=["All","WordPress","HTML, CSS & JavaScript","React","Business Websites","E-commerce"];
+
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+$("#hl").innerHTML=HL.map(h=>`<div class="glass card rv"><div class="ico">${h[0]}</div><h3>${h[1]}</h3><p>${h[2]}</p></div>`).join("");
+$("#sk").innerHTML=SK.map(s=>`<div class="glass card rv"><div class="ico">${s[0]}</div><h3>${s[1]}</h3><div class="tags">${s[2].map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div></div>`).join("");
+$("#sv").innerHTML=SV.map((s,i)=>`<div class="glass card rv"><div class="ico">0${i+1}</div><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join("");
+$("#st").innerHTML=ST.map((s,i)=>`<div class="glass step rv"><span class="n grad">0${i+1}</span><h3 style="margin-bottom:8px">${s[0]}</h3><p style="color:var(--mu);margin:0;font-size:15px">${s[1]}</p></div>`).join("");
+$("#wy").innerHTML=WY.map(w=>`<li class="glass rv">${w}</li>`).join("");
+
+const hue=n=>[...n].reduce((a,c)=>a+c.charCodeAt(0),0)*7%360;
+function render(f){
+  const list=PROJECTS.filter(p=>f==="All"||p.filters.includes(f));
+  $("#pj").innerHTML=list.length?list.map(p=>{const h=hue(p.name);
+  return `<article class="glass proj rv in"><div class="th" style="background:linear-gradient(135deg,hsl(${h} 70% 38%),hsl(${(h+60)%360} 70% 22%))"><span class="badge">${esc(p.cat)}</span>${p.img?`<img src="${esc(p.img)}" alt="${esc(p.name)} website preview" loading="lazy" width="600" height="380">`:`<b aria-hidden="true">${esc(p.name.split(" ").map(w=>w[0]).slice(0,2).join(""))}</b>`}</div>
+  <div class="pb"><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p>${p.tech.length?`<div class="tags" style="margin:0">${p.tech.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div>`:""}
+  <ul>${p.hl.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+  <div class="acts"><a class="btn p" href="${esc(p.url)}" target="_blank" rel="noopener">Live Website ↗</a>${p.gh?`<a class="btn" href="${esc(p.gh)}" target="_blank" rel="noopener">GitHub</a>`:""}</div></div></article>`}).join(""):`<p class="empty">No projects tagged “${esc(f)}” yet. Add this filter to a project's <code>filters</code> array.</p>`;
+}
+$("#fl").innerHTML=FILTERS.map((f,i)=>`<button class="f" aria-pressed="${i==0}">${f}</button>`).join("");
+$("#fl").addEventListener("click",e=>{const b=e.target.closest(".f");if(!b)return;document.querySelectorAll(".f").forEach(x=>x.setAttribute("aria-pressed",x===b));render(b.textContent)});
+render("All");
+
+$("#c-mail").href="mailto:"+CFG.email;$("#c-in").href=$(".ln-in").href=CFG.linkedin;$("#c-gh").href=$(".ln-gh").href=CFG.github;$("#c-wa").href=CFG.whatsapp;
+document.querySelectorAll('[href="RESUME_URL"]').forEach(a=>a.href=CFG.resume);
+$("#yr").textContent=new Date().getFullYear();
+$("#cf").addEventListener("submit",e=>{e.preventDefault();const d=new FormData(e.target);
+  location.href=`mailto:${CFG.email}?subject=${encodeURIComponent(d.get("s"))}&body=${encodeURIComponent(d.get("m")+"\n\n— "+d.get("n")+" ("+d.get("e")+")")}`;$("#fs").textContent="Opening your email app…"});
+const bg=$("#bg"),lk=$("#lk");bg.onclick=()=>{const o=lk.classList.toggle("open");bg.setAttribute("aria-expanded",o)};lk.onclick=e=>{if(e.target.tagName==="A"){lk.classList.remove("open");bg.setAttribute("aria-expanded",false)}};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
